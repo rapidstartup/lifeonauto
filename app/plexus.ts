@@ -1,6 +1,6 @@
 export function initPlexus() {
   const canvas = document.getElementById('plexus') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
   
   if (!ctx) return;
 

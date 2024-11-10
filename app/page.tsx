@@ -145,10 +145,10 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-4">About Nathan</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founder and Head "Business-Speak-To-Technical-Talk" Translator at RapidAgent.ai, Nathan has spent over 15 years translating complex technical concepts into simple, actionable steps for businesses and individuals.
+                  Founder and Head &quot;Business-Speak-To-Technical-Talk&quot; Translator at RapidAgent.ai, Nathan has spent over 15 years translating complex technical concepts into simple, actionable steps for businesses and individuals.
                 </p>
                 <p>
-                  From unpaid intern to successful software company founder, Nathan's journey through hospitality, banking, mining, and marketing gives him a unique perspective on making technology accessible to everyone.
+                  From unpaid intern to successful software company founder, Nathan&apos;s journey through hospitality, banking, mining, and marketing gives him a unique perspective on making technology accessible to everyone.
                 </p>
               </div>
               <Button asChild size="lg" className="mt-6">
