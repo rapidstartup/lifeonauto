@@ -14,7 +14,7 @@ export default function AboutPage() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <img
-                src="/Nathan-profile.jpg"
+                src="/images/Nathan-profile.png"
                 alt="Nathan Shearer"
                 className="relative rounded-lg shadow-lg w-full"
               />

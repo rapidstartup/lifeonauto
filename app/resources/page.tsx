@@ -1,29 +1,9 @@
 "use client";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/ui/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, FileText, Video } from "lucide-react";
-
-const resources = [
-  {
-    title: "AI Tool Directory",
-    description: "A comprehensive collection of vetted AI tools for various business needs, complete with implementation guides and best practices.",
-    icon: Bot,
-    link: "#"
-  },
-  {
-    title: "Automation Templates",
-    description: "Ready-to-use templates and workflows for common business processes, designed to get you started immediately.",
-    icon: FileText,
-    link: "#"
-  },
-  {
-    title: "Video Tutorials",
-    description: "Step-by-step video guides showing you exactly how to implement the strategies from the book.",
-    icon: Video,
-    link: "#"
-  }
-];
+import { ResourceTabs } from "./components/resource-tabs";
+import { Card } from "@/components/ui/card";
 
 export default function ResourcesPage() {
   return (
@@ -39,27 +19,27 @@ export default function ResourcesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {resources.map((resource, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all">
-                <CardHeader>
-                  <resource.icon className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle className="group-hover:text-primary transition-colors">
-                    {resource.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{resource.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-muted-foreground">
-              More resources are added regularly. Check back often for updates!
-            </p>
-          </div>
+          <Tabs defaultValue="templates" className="max-w-5xl mx-auto">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="templates">Templates</TabsTrigger>
+              <TabsTrigger value="tools">Tools</TabsTrigger>
+              <TabsTrigger value="tutorials">Tutorials</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="templates">
+              <ResourceTabs type="templates" />
+            </TabsContent>
+            
+            <TabsContent value="tools">
+              <ResourceTabs type="tools" />
+            </TabsContent>
+            
+            <TabsContent value="tutorials">
+              <div className="grid grid-cols-1 gap-4">
+                {/* Tutorial content */}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
     </div>
