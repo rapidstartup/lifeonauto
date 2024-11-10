@@ -9,7 +9,8 @@ import {
   Eye,
   Settings,
   Layout,
-  Image
+  Image,
+  Table
 } from 'lucide-react';
 
 interface DocumentSection {
