@@ -4,10 +4,7 @@ import TemplateContent from '../../components/template-content';
 import { ResourceLayout } from '../../components/resource-layout';
 
 export default function TemplatePage({ params }: { params: { template: string } }) {
-  const template = templateItems.find(t => {
-    const path = t.href.split('/').pop()?.replace('.md', '');
-    return path === params.template;
-  });
+  const template = templateItems.find(t => t.href === params.template);
 
   if (!template) {
     notFound();
@@ -25,6 +22,6 @@ export default function TemplatePage({ params }: { params: { template: string } 
 
 export async function generateStaticParams() {
   return templateItems.map((template) => ({
-    template: template.href.split('/').pop()?.replace('.md', ''),
+    template: template.href,
   }));
 } 

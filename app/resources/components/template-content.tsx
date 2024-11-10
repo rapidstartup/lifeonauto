@@ -18,9 +18,8 @@ export default function TemplateContent({ template }: TemplateContentProps) {
   useEffect(() => {
     async function fetchTemplate() {
       try {
-        // Remove the leading slash if present
-        const cleanHref = template.href.startsWith('/') ? template.href.slice(1) : template.href;
-        const response = await fetch(`/${cleanHref}`);
+        // Construct the correct path to the markdown file
+        const response = await fetch(`/resources/templates/${template.href}.md`);
         if (!response.ok) throw new Error('Failed to fetch template');
         
         const text = await response.text();

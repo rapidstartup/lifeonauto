@@ -2,37 +2,37 @@ export const templateItems = [
   {
     title: "Change Log Template",
     description: "Template for tracking changes and updates",
-    href: "/resources/templates/change-log-template.md"
+    href: "change-log-template"
   },
   {
     title: "System Documentation Template",
     description: "Standardized system documentation format",
-    href: "/resources/templates/system-documentation-template.md"
+    href: "system-documentation-template"
   },
   {
     title: "Testing Framework Template",
     description: "Template for test case documentation",
-    href: "/resources/templates/testing-framework-template.md"
+    href: "testing-framework-template"
   },
   {
     title: "Tool Selection Worksheet",
     description: "Guide for evaluating and selecting tools",
-    href: "/resources/templates/tool-selection-worksheet.md"
+    href: "tool-selection-worksheet"
   },
   {
     title: "Update Planning Guide",
     description: "Template for planning system updates",
-    href: "/resources/templates/update-planning-guide-template.md"
+    href: "update-planning-guide-template"
   },
   {
     title: "Workflow Template",
     description: "Standard workflow documentation template",
-    href: "/resources/templates/workflow-template.md"
+    href: "workflow-template"
   },
   {
     title: "Task Analysis Template",
     description: "Template for analyzing task requirements",
-    href: "/resources/templates/task-analysis-template.md"
+    href: "task-analysis-template"
   }
 ];
 

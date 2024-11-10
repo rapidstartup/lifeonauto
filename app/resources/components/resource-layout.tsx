@@ -10,19 +10,10 @@ interface ResourceLayoutProps {
 export function ResourceLayout({ children, type }: ResourceLayoutProps) {
   const items = type === 'templates' ? templateItems : toolItems;
 
-  const sidebarItems = items.map(item => {
-    if (type === 'templates') {
-      return {
-        title: item.title,
-        href: `/resources/templates/${item.href.split('/').pop()}`
-      };
-    } else {
-      return {
-        title: item.title,
-        href: `/resources/tools/${(item as typeof toolItems[0]).href}`
-      };
-    }
-  });
+  const sidebarItems = items.map(item => ({
+    title: item.title,
+    href: `/resources/${type}/${item.href}`
+  }));
 
   return (
     <div className="min-h-screen bg-background">
