@@ -18,14 +18,9 @@ export default function TemplateContent({ template }: TemplateContentProps) {
   useEffect(() => {
     async function fetchTemplate() {
       try {
-        // Construct the correct path to the markdown file in the public directory
-        const response = await fetch(`/api/templates/${template.href}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch template');
-        }
-        
-        const text = await response.text();
-        setContent(text);
+        // Import the markdown file directly
+        const templateModule = await import(`../templates/${template.href}.md`);
+        setContent(templateModule.default);
       } catch (error) {
         console.error('Error loading template:', error);
         setContent('Error loading template content');

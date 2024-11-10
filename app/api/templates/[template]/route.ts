@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { NextResponse } from 'next/server';
+import { templateItems } from '@/app/resources/data';
 
 export async function GET(
   request: Request,
@@ -14,4 +15,10 @@ export async function GET(
     console.error('Error reading template:', error);
     return new NextResponse('Error loading template', { status: 500 });
   }
+}
+
+export function generateStaticParams() {
+  return templateItems.map((template) => ({
+    template: template.href,
+  }));
 } 
