@@ -1,7 +1,7 @@
 import { templateItems } from '../../data';
 import { notFound } from 'next/navigation';
-import { Navigation } from '@/components/ui/navigation';
 import TemplateContent from '../../components/template-content';
+import { ResourceLayout } from '../../components/resource-layout';
 
 export default function TemplatePage({ params }: { params: { template: string } }) {
   const template = templateItems.find(t => {
@@ -14,12 +14,9 @@ export default function TemplatePage({ params }: { params: { template: string } 
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      <div className="container mx-auto p-6 pt-24">
-        <TemplateContent template={template} />
-      </div>
-    </div>
+    <ResourceLayout type="templates">
+      <TemplateContent template={template} />
+    </ResourceLayout>
   );
 }
 

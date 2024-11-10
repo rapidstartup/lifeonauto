@@ -3,41 +3,52 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ResourceSidebar from './resource-sidebar';
 import { templateItems, toolItems } from '../data';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function ResourceTabs() {
-  const pathname = usePathname();
-  const currentTab = pathname.includes('/tools') ? 'tools' : 'templates';
+  const router = useRouter();
+
+  const handleTemplateClick = (href: string) => {
+    router.push(`/resources/templates/${href.split('/').pop()}`);
+  };
+
+  const handleToolClick = (href: string) => {
+    router.push(`/resources/tools/${href}`);
+  };
 
   return (
-    <Tabs defaultValue={currentTab} className="w-full">
+    <Tabs defaultValue="templates" className="w-full">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="templates">Templates</TabsTrigger>
         <TabsTrigger value="tools">Tools</TabsTrigger>
         <TabsTrigger value="tutorials">Tutorials</TabsTrigger>
       </TabsList>
       <TabsContent value="templates">
-        <div className="flex gap-6 mt-6">
-          <ResourceSidebar 
-            items={templateItems.map(item => ({
-              title: item.title,
-              href: `/resources/templates/${item.href.split('/').pop()}`
-            }))}
-            currentPath={pathname}
-            title="Templates"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {templateItems.map((template, index) => (
+            <div
+              key={index}
+              className="cursor-pointer p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+              onClick={() => handleTemplateClick(template.href)}
+            >
+              <h3 className="font-semibold mb-2">{template.title}</h3>
+              <p className="text-sm text-gray-600">{template.description}</p>
+            </div>
+          ))}
         </div>
       </TabsContent>
       <TabsContent value="tools">
-        <div className="flex gap-6 mt-6">
-          <ResourceSidebar 
-            items={toolItems.map(item => ({
-              title: item.title,
-              href: `/resources/tools/${item.href.split('/').pop()}`
-            }))}
-            currentPath={pathname}
-            title="Tools"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {toolItems.map((tool, index) => (
+            <div
+              key={index}
+              className="cursor-pointer p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+              onClick={() => handleToolClick(tool.href)}
+            >
+              <h3 className="font-semibold mb-2">{tool.title}</h3>
+              <p className="text-sm text-gray-600">{tool.description}</p>
+            </div>
+          ))}
         </div>
       </TabsContent>
       <TabsContent value="tutorials">
