@@ -1,9 +1,6 @@
-"use client";
-
 import { Navigation } from "@/components/ui/navigation";
-import ResourceSidebar from './resource-sidebar';
 import { templateItems, toolItems } from '../data';
-import { usePathname } from 'next/navigation';
+import { ResourceLayoutWrapper } from './resource-layout-wrapper';
 
 interface ResourceLayoutProps {
   children: React.ReactNode;
@@ -11,7 +8,6 @@ interface ResourceLayoutProps {
 }
 
 export function ResourceLayout({ children, type }: ResourceLayoutProps) {
-  const pathname = usePathname();
   const items = type === 'templates' ? templateItems : toolItems;
 
   const sidebarItems = items.map(item => {
@@ -32,16 +28,12 @@ export function ResourceLayout({ children, type }: ResourceLayoutProps) {
     <div className="min-h-screen bg-background">
       <Navigation />
       <div className="container mx-auto p-6 pt-24">
-        <div className="flex gap-6">
-          <ResourceSidebar 
-            items={sidebarItems}
-            currentPath={pathname}
-            title={type === 'templates' ? 'Templates' : 'Tools'}
-          />
-          <div className="flex-1">
-            {children}
-          </div>
-        </div>
+        <ResourceLayoutWrapper 
+          sidebarItems={sidebarItems}
+          title={type === 'templates' ? 'Templates' : 'Tools'}
+        >
+          {children}
+        </ResourceLayoutWrapper>
       </div>
     </div>
   );
