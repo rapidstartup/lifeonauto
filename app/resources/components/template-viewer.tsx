@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 
 export default function TemplateViewer({ templatePath }: { templatePath: string }) {

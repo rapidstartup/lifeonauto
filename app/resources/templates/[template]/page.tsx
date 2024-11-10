@@ -1,4 +1,4 @@
-import { TemplateViewer } from '../../components/template-viewer';
+import TemplateViewer from '../../components/template-viewer';
 import { templateItems } from '../../data';
 import { notFound } from 'next/navigation';
 

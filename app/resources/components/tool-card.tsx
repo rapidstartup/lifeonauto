@@ -11,7 +11,10 @@ interface ToolCardProps {
 
 export function ToolCard({ title, description, href }: ToolCardProps) {
   // Dynamically import the tool component
-  const ToolComponent = dynamic(() => import(`../tools/${href}`));
+  const ToolComponent = dynamic(() => import(`../tools/${href}`), {
+    loading: () => <div>Loading...</div>,
+    ssr: false
+  });
 
   return (
     <Card>
