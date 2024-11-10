@@ -1,5 +1,3 @@
-"use client";
-
 import { toolItems } from '../../data';
 import { notFound } from 'next/navigation';
 import { ResourceLayout } from '../../components/resource-layout';
