@@ -83,20 +83,40 @@ export default function ROICalculator() {
     });
   };
 
-  const updateCost = (index: number, field: 'amount' | 'description', value: number | string, type: 'oneTime' | 'recurring') => {
+  const updateCost = (
+    index: number,
+    field: 'amount' | 'description',
+    value: number | string,
+    type: 'oneTime' | 'recurring'
+  ) => {
     const newData = { ...data };
+    const costItem = {
+      description: typeof value === 'string' ? value : String(value),
+      amount: typeof value === 'number' ? value : Number(value)
+    };
+
     if (type === 'oneTime') {
-      newData.oneTimeCosts[index][field] = value;
+      newData.oneTimeCosts[index] = {
+        ...newData.oneTimeCosts[index],
+        [field]: field === 'amount' ? Number(value) : String(value)
+      };
     } else {
-      newData.recurringCosts[index][field] = value;
+      newData.recurringCosts[index] = {
+        ...newData.recurringCosts[index],
+        [field]: field === 'amount' ? Number(value) : String(value)
+      };
     }
+    
     setData(newData);
     calculateROI();
   };
 
   const updateTimeSaving = (index: number, field: keyof typeof data.timeSavings[0], value: number | string) => {
     const newData = { ...data };
-    newData.timeSavings[index][field] = value;
+    newData.timeSavings[index] = {
+      ...newData.timeSavings[index],
+      [field]: field === 'taskName' ? String(value) : Number(value)
+    };
     setData(newData);
     calculateROI();
   };
