@@ -15,7 +15,9 @@ export default function TemplatePage({ params }: { params: { template: string } 
 
   return (
     <ResourceLayout type="templates">
-      <TemplateContent template={template} />
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <TemplateContent template={template} />
+      </div>
     </ResourceLayout>
   );
 }
