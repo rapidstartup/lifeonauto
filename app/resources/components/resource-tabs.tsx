@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TemplateViewer } from "./template-viewer";
+//import { TemplateViewer } from "./template-viewer";
 import { ToolCard } from "./tool-card";
 import AIPromptBuilder from '../tools/ai-prompt-builder';
 import AutomationMonitorDashboard from '../tools/automation-monitor-dashboard';

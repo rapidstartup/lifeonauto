@@ -2,12 +2,12 @@ export const templateItems = [
   {
     title: "Change Log Template",
     description: "Template for tracking changes and updates",
-    href: "/resources/templates/change-log-template"
+    href: "/templates/change-log-template.md"
   },
   {
     title: "System Documentation Template",
     description: "Standardized system documentation format",
-    href: "/resources/templates/system-documentation-template"
+    href: "/templates/system-documentation-template.md"
   },
   {
     title: "Testing Framework Template",
@@ -40,17 +40,17 @@ export const toolItems = [
   {
     title: "AI Prompt Builder",
     description: "Create and manage AI prompts for various use cases",
-    href: "resources/tools/ai-prompt-builder"
+    href: "/ai-prompt-builder"
   },
   {
     title: "Automation Monitor",
     description: "Monitor and manage automation workflows",
-    href: "resources/tools/automation-monitor-dashboard"
+    href: "/automation-monitor-dashboard"
   },
   {
     title: "Cost Calculator",
     description: "Calculate automation implementation costs",
-    href: "resources/tools/cost-calculator-component"
+    href: "/cost-calculator-component"
   },
   {
     title: "Document Generator",
