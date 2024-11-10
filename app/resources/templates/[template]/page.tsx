@@ -1,6 +1,7 @@
 import TemplateViewer from '../../components/template-viewer';
 import { templateItems } from '../../data';
 import { notFound } from 'next/navigation';
+import { Navigation } from '@/components/ui/navigation';
 
 export default function TemplatePage({ params }: { params: { template: string } }) {
   const template = templateItems.find(t => {
@@ -13,9 +14,13 @@ export default function TemplatePage({ params }: { params: { template: string } 
   }
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">{template.title}</h1>
-      <TemplateViewer templatePath={template.href} />
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <div className="container mx-auto p-6 pt-24">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+          <TemplateViewer templatePath={template.href} title={template.title} />
+        </div>
+      </div>
     </div>
   );
 }

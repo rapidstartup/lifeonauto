@@ -55,46 +55,46 @@ export const toolItems = [
   {
     title: "Document Generator",
     description: "Generate standardized documentation",
-    href: "/resources/tools/document-generator.md"
+    href: "document-generator"
   },
   {
     title: "Documentation Hub",
     description: "Centralized documentation management",
-    href: "/resources/tools/documentation-hub.md"
+    href: "documentation-hub"
   },
   {
     title: "Enhanced Prompt Generator",
     description: "Advanced AI prompt generation and management",
-    href: "/resources/tools/enhanced-prompt-generator.md"
+    href: "enhanced-prompt-generator"
   },
   {
     title: "Integration Manager",
     description: "Manage system integrations and connections",
-    href: "/resources/tools/integration-manager-complete.md"
+    href: "integration-manager-complete"
   },
   {
     title: "Process Documentation Generator",
     description: "Create detailed process documentation",
-    href: "/resources/tools/process-documentation-generator.md"
+    href: "process-documentation-generator"
   },
   {
     title: "ROI Calculator",
     description: "Calculate automation ROI and benefits",
-    href: "/resources/tools/roi-calculator-component.md"
+    href: "roi-calculator-component"
   },
   {
     title: "Task Scheduler",
     description: "Schedule and manage automated tasks",
-    href: "/resources/tools/task-scheduler-complete-fixed.md"
+    href: "task-scheduler-complete-fixed"
   },
   {
     title: "Testing Framework Generator",
     description: "Generate comprehensive test frameworks",
-    href: "/resources/tools/testing-framework-generator.md"
+    href: "testing-framework-generator"
   },
   {
     title: "Workflow Builder",
     description: "Build and visualize automation workflows",
-    href: "/resources/tools/workflow-builder.md"
+    href: "workflow-builder"
   }
 ]; 
