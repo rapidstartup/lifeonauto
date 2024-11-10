@@ -70,7 +70,7 @@ export default function Home() {
                 No tech experience required - learn how to automate your daily tasks and multiply your productivity with AI.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="animate-pulse">
+                <Button size="lg" asChild className="animate-pulse bg-[#FF9900] hover:bg-[#FF9900]/90 text-black">
                   <a href="#" className="flex items-center">
                     Get it on Amazon
                     <ChevronRight className="ml-2 h-4 w-4" />
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
             <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
               <Image
-                src="/book-cover.png"
+                src="/images/LifeOnAuto-cover.jpg"
                 alt="Life On Auto Book Cover"
                 width={400}
                 height={600}
@@ -134,7 +134,7 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <Image
-                src="/Nathan-profile.jpg"
+                src="/images/Nathan-profile.png"
                 alt="Nathan Shearer"
                 width={500}
                 height={500}
