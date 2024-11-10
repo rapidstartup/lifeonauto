@@ -4,24 +4,21 @@ import dynamic from "next/dynamic";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ToolCardProps {
-  tool: {
-    title: string;
-    category: string;
-    chapter: string;
-    component: string;
-  };
+  title: string;
+  description: string;
+  href: string;
 }
 
-export function ToolCard({ tool }: ToolCardProps) {
+export function ToolCard({ title, description, href }: ToolCardProps) {
   // Dynamically import the tool component
-  const ToolComponent = dynamic(() => import(`../tools/${tool.component}`));
+  const ToolComponent = dynamic(() => import(`../tools/${href}`));
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{tool.title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <p className="text-muted-foreground">
-          {tool.category} • {tool.chapter}
+          {description}
         </p>
       </CardHeader>
       <CardContent>

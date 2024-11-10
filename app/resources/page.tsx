@@ -2,8 +2,11 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navigation } from "@/components/ui/navigation";
-import { ResourceTabs } from "./components/resource-tabs";
 import { Card } from "@/components/ui/card";
+import { ToolCard } from "./components/tool-card";
+
+// Add these imports
+import { templateItems, toolItems } from "./data";
 
 export default function ResourcesPage() {
   return (
@@ -27,11 +30,28 @@ export default function ResourcesPage() {
             </TabsList>
             
             <TabsContent value="templates">
-              <ResourceTabs type="templates" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {templateItems.map((template, index) => (
+                  <Card key={index} className="p-6">
+                    <h3 className="text-lg font-semibold mb-2">{template.title}</h3>
+                    <p className="text-muted-foreground mb-4">{template.description}</p>
+                    {/* Add any template-specific actions here */}
+                  </Card>
+                ))}
+              </div>
             </TabsContent>
             
             <TabsContent value="tools">
-              <ResourceTabs type="tools" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {toolItems.map((tool, index) => (
+                  <ToolCard
+                    key={index}
+                    title={tool.title}
+                    description={tool.description}
+                    href={tool.href}
+                  />
+                ))}
+              </div>
             </TabsContent>
             
             <TabsContent value="tutorials">
