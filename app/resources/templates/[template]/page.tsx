@@ -1,3 +1,5 @@
+"use client";
+
 import TemplateViewer from '../../components/template-viewer';
 import { templateItems } from '../../data';
 import { notFound } from 'next/navigation';
@@ -16,7 +18,8 @@ export default function TemplatePage({ params }: { params: { template: string } 
     if (template) {
       fetch(template.href)
         .then(res => res.text())
-        .then(text => setContent(text));
+        .then(text => setContent(text))
+        .catch(error => console.error('Error loading template:', error));
     }
   }, [template]);
 
