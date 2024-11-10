@@ -1,7 +1,6 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ResourceSidebar from './resource-sidebar';
 import { templateItems, toolItems } from '../data';
 import { useRouter } from 'next/navigation';
 
@@ -9,7 +8,8 @@ export function ResourceTabs() {
   const router = useRouter();
 
   const handleTemplateClick = (href: string) => {
-    router.push(`/resources/templates/${href.split('/').pop()}`);
+    const templatePath = href.split('/').pop()?.replace('.md', '');
+    router.push(`/resources/templates/${templatePath}`);
   };
 
   const handleToolClick = (href: string) => {

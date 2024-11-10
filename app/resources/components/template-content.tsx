@@ -18,14 +18,13 @@ export default function TemplateContent({ template }: TemplateContentProps) {
   useEffect(() => {
     async function fetchTemplate() {
       try {
-        // Construct the correct path to the markdown file
-        const response = await fetch(template.href);
+        // Remove the leading slash if present
+        const cleanHref = template.href.startsWith('/') ? template.href.slice(1) : template.href;
+        const response = await fetch(`/${cleanHref}`);
         if (!response.ok) throw new Error('Failed to fetch template');
         
         const text = await response.text();
-        // Clean the content
-        const cleanContent = text.replace(/<!DOCTYPE[^>]*>|<html[^>]*>|<\/html>|<head>[\s\S]*?<\/head>|<body[^>]*>|<\/body>/g, '');
-        setContent(cleanContent);
+        setContent(text);
       } catch (error) {
         console.error('Error loading template:', error);
         setContent('Error loading template content');
@@ -38,11 +37,13 @@ export default function TemplateContent({ template }: TemplateContentProps) {
   }, [template.href]);
 
   if (loading) {
-    return <div>Loading template...</div>;
+    return <div className="flex items-center justify-center h-32">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+    </div>;
   }
 
   return (
-    <div className="prose max-w-none">
+    <div className="prose max-w-none dark:prose-invert">
       <Markdown rehypePlugins={[rehypeRaw]}>
         {content}
       </Markdown>
