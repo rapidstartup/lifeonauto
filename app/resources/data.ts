@@ -36,65 +36,97 @@ export const templateItems = [
   }
 ];
 
-export const toolItems = [
+interface ToolItem {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  component: React.ComponentType;
+}
+
+export const toolItems: ToolItem[] = [
   {
+    id: "ai-prompt-builder",
     title: "AI Prompt Builder",
     description: "Create and manage AI prompts for various use cases",
-    href: "ai-prompt-builder"
+    href: "ai-prompt-builder",
+    component: () => null
   },
   {
+    id: "automation-monitor-dashboard",
     title: "Automation Monitor",
     description: "Monitor and manage automation workflows",
-    href: "automation-monitor-dashboard"
+    href: "automation-monitor-dashboard",
+    component: () => null
   },
   {
+    id: "cost-calculator-component",
     title: "Cost Calculator",
     description: "Calculate automation implementation costs",
-    href: "cost-calculator-component"
+    href: "cost-calculator-component",
+    component: () => null
   },
   {
+    id: "document-generator",
     title: "Document Generator",
     description: "Generate standardized documentation",
-    href: "document-generator"
+    href: "document-generator",
+    component: () => null
   },
   {
+    id: "documentation-hub",
     title: "Documentation Hub",
     description: "Centralized documentation management",
-    href: "documentation-hub"
+    href: "documentation-hub",
+    component: () => null
   },
   {
+    id: "enhanced-prompt-generator",
     title: "Enhanced Prompt Generator",
     description: "Advanced AI prompt generation and management",
-    href: "enhanced-prompt-generator"
+    href: "enhanced-prompt-generator",
+    component: () => null
   },
   {
+    id: "integration-manager-complete",
     title: "Integration Manager",
     description: "Manage system integrations and connections",
-    href: "integration-manager-complete"
+    href: "integration-manager-complete",
+    component: () => null
   },
   {
+    id: "process-documentation-generator",
     title: "Process Documentation Generator",
     description: "Create detailed process documentation",
-    href: "process-documentation-generator"
+    href: "process-documentation-generator",
+    component: () => null
   },
   {
+    id: "roi-calculator-component",
     title: "ROI Calculator",
     description: "Calculate automation ROI and benefits",
-    href: "roi-calculator-component"
+    href: "roi-calculator-component",
+    component: () => null
   },
   {
+    id: "task-scheduler-complete-fixed",
     title: "Task Scheduler",
     description: "Schedule and manage automated tasks",
-    href: "task-scheduler-complete-fixed"
+    href: "task-scheduler-complete-fixed",
+    component: () => null
   },
   {
+    id: "testing-framework-generator",
     title: "Testing Framework Generator",
     description: "Generate comprehensive test frameworks",
-    href: "testing-framework-generator"
+    href: "testing-framework-generator",
+    component: () => null
   },
   {
+    id: "workflow-builder",
     title: "Workflow Builder",
     description: "Build and visualize automation workflows",
-    href: "workflow-builder"
+    href: "workflow-builder",
+    component: () => null
   }
 ]; 
