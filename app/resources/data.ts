@@ -40,17 +40,17 @@ export const toolItems = [
   {
     title: "AI Prompt Builder",
     description: "Create and manage AI prompts for various use cases",
-    href: "/resources/tools/ai-prompt-builder"
+    href: "resources/tools/ai-prompt-builder"
   },
   {
     title: "Automation Monitor",
     description: "Monitor and manage automation workflows",
-    href: "/resources/tools/automation-monitor-dashboard"
+    href: "resources/tools/automation-monitor-dashboard"
   },
   {
     title: "Cost Calculator",
     description: "Calculate automation implementation costs",
-    href: "/resources/tools/cost-calculator-component"
+    href: "resources/tools/cost-calculator-component"
   },
   {
     title: "Document Generator",
